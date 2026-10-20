@@ -202,3 +202,26 @@
   box-shadow: none;
   transition: color 200ms var(--ease);
 }
+
+/* The plan artwork from coderarmy.in, edge to edge at the top of each card. */
+#root .plan-image {
+  display: block;
+  width: calc(100% + 2 * var(--space-8));
+  max-width: none;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin: calc(-1 * var(--space-8)) calc(-1 * var(--space-8)) var(--space-6);
+  border-bottom: 1px solid var(--border);
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+  background: #0b0b0d;
+}
+#root .plan-badge {
+  z-index: 1;
+}
+@media (max-width: 640px) {
+  #root .plan-image {
+    width: calc(100% + 2 * var(--space-6));
+    margin: calc(-1 * var(--space-6)) calc(-1 * var(--space-6)) var(--space-6);
+  }
+}

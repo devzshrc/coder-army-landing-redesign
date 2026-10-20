@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
+import plusImage from "../assets/plans/strike-plus.jpg";
+import ultraImage from "../assets/plans/strike-ultra.jpg";
 import "./pricing.css";
 
 type Years = 2 | 3 | 4;
@@ -8,6 +10,7 @@ const plans = [
   {
     id: "plus",
     name: "Strike Plus",
+    image: plusImage,
     desc: "Every course we have today.",
     prices: { 2: 9999, 3: 11999, 4: 12499 },
     cta: "Get Strike Plus",
@@ -23,6 +26,7 @@ const plans = [
   {
     id: "ultra",
     name: "Strike Ultra",
+    image: ultraImage,
     desc: "Every course we have today, plus every new one we launch.",
     prices: { 2: 11999, 3: 12999, 4: 13499 },
     cta: "Get Strike Ultra",
@@ -67,6 +71,7 @@ export function Pricing() {
           return (
             <article key={p.id} className="plan reveal" data-featured={featured}>
               {featured && <span className="plan-badge">{p.badge}</span>}
+              <img className="plan-image" src={p.image} alt="" width="1200" height="675" loading="lazy" decoding="async" />
               <h3>{p.name}</h3>
               <p className="plan-desc">{p.desc}</p>
               <div className="plan-price">
