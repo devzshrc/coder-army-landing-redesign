@@ -44,6 +44,7 @@ import { FreeCourseLibrary } from "./components/free-course-library";
 import { BeamsBackground } from "./components/beams-background";
 import { Pricing } from "./components/pricing";
 import { CourseFilters } from "./components/course-filters";
+import { ContactSection } from "./components/contact-section";
 import { CourseDialog } from "./components/course-dialog";
 import { Instructors } from "./components/instructors";
 import { HeroWord } from "./components/hero-word";
@@ -364,6 +365,7 @@ export function App() {
             ))}
           </div>
         </section>
+        <ContactSection />
         <section className="final-cta">
           <div className="final-grid" aria-hidden="true" />
           <div className="reveal">
@@ -413,6 +415,7 @@ export function App() {
             <a href="#mentors">Your mentors</a>
             <a href="#testimonials">Student stories</a>
             <a href="#faq">FAQs</a>
+            <a href="#contact">Contact us</a>
           </div>
           <div>
             <span>FIND US ELSEWHERE</span>
