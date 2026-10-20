@@ -18,7 +18,7 @@ import {
   CircleCheck,
   Sparkles,
 } from "lucide-react";
-import "@fontsource-variable/inter/index.css";
+import "./fonts";
 import "./index.css";
 import "./polish.css";
 import "./theme.css";
