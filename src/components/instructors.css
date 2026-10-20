@@ -1,0 +1,102 @@
+/* Instructors — two plain cards. */
+#root .mentors-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+#root .mentor-profile {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--paper);
+  overflow: hidden;
+}
+#root .mentor-photo-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+  transform: scale(1.06); /* trims the tilted white corners baked into one photo */
+}
+#root .mentor-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: var(--space-6);
+  position: relative;
+  background: var(--paper);
+}
+#root .mentor-body h3 {
+  margin: 0;
+  font-size: var(--text-xl);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+#root .mentor-role {
+  margin: 4px 0 0;
+  font-size: var(--text-sm);
+  color: var(--muted-ink);
+}
+#root .mentor-desc {
+  margin: var(--space-4) 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted-ink);
+}
+#root .mentor-background {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink);
+}
+#root .mentor-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: var(--space-6) 0 0;
+  border: 0;
+  background: none;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--brand);
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  #root .mentors-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Photo beside the text: both portraits share one smaller 4:5 frame. */
+#root .mentor-profile {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+}
+#root .mentor-photo-img {
+  width: 240px;
+  height: 100%;
+  min-height: 300px;
+  aspect-ratio: auto;
+}
+@media (max-width: 1000px) {
+  #root .mentors-pair {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 520px) {
+  #root .mentor-profile {
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+  #root .mentor-photo-img {
+    width: 112px;
+    min-height: 0;
+  }
+  #root .mentor-body {
+    padding: var(--space-4);
+  }
+}

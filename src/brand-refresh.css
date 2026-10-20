@@ -1,0 +1,908 @@
+@font-face {
+  font-family: Satoshi;
+  src: url("./assets/satoshi-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Satoshi;
+  src: url("./assets/satoshi-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: Satoshi;
+  src: url("./assets/satoshi-700.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: Satoshi;
+  src: url("./assets/satoshi-900.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("./assets/bricolage-600.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("./assets/bricolage-700.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("./assets/bricolage-800.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+html:root {
+  --brand: #2563eb;
+  --brand-dark: #1d4ed8;
+  --brand-soft: #edf3ff;
+  --paper: #fcfdff;
+  --line: #e0e6f0;
+  --soft: #f2f5fa;
+  --muted-ink: #647086;
+  --font-reading: Satoshi, Arial, sans-serif;
+  --font-heading: "Bricolage Grotesque", Satoshi, sans-serif;
+  --font-ui: Geist, Satoshi, sans-serif;
+}
+html.dark {
+  --brand: #7aa7ff;
+  --brand-dark: #9abaff;
+  --brand-soft: #1b2a47;
+  --paper: #101319;
+  --ink: #f0f4fc;
+  --line: #293346;
+  --soft: #19202b;
+  --muted-ink: #acb9cc;
+}
+html body {
+  font-family: var(--font-reading);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+html :is(h1, h2, h3, h4) {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+html .hero h1 {
+  font-size: clamp(66px, 6.4vw, 92px);
+  line-height: 1.01;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+html h2 {
+  font-size: clamp(40px, 3.8vw, 55px);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+html .hero-copy {
+  grid-template-columns: 1.15fr 1fr;
+  gap: 58px;
+  align-items: center;
+  padding-top: 86px;
+  padding-bottom: 76px;
+  overflow: visible;
+  isolation: auto;
+  background: transparent;
+}
+html .hero-description > p:first-child {
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #46546b;
+  letter-spacing: -0.025em;
+  max-width: 480px;
+}
+html.dark .hero-description > p:first-child {
+  color: #d1def1;
+}
+html .hero-support {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 455px;
+  margin-top: 18px;
+  color: var(--muted-ink);
+}
+html .section-description {
+  font-size: 18px;
+  line-height: 1.75;
+  max-width: 465px;
+}
+html .hero-note {
+  font-size: 13px;
+}
+html
+  :is(
+    .button,
+    .nav-links,
+    .login-link,
+    .eyebrow,
+    .course-filters,
+    .course-tags,
+    .course-mode,
+    .hero-note,
+    .hero-socials,
+    .experience-tabs,
+    .showcase-guide,
+    .feature-demo-button,
+    .demo-play,
+    .theme-toggle,
+    .course-card-footer,
+    .free-course-meta,
+    .payment-note,
+    .membership-tag
+  ) {
+  font-family: var(--font-ui);
+}
+html .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.13em;
+}
+html .hero-buttons {
+  gap: 13px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+html .button {
+  border-radius: 13px;
+  min-height: 52px;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  gap: 12px;
+  position: relative;
+  transition:
+    transform 140ms var(--ease-out),
+    box-shadow 140ms ease,
+    background-color 140ms ease;
+}
+html .button.primary,
+html.dark .button.primary {
+  color: #fff;
+  background: linear-gradient(180deg, #5e91ff 0%, #3978f6 48%, #2563eb 100%);
+  border: 1px solid #164bc6;
+  box-shadow:
+    inset 0 1px 0 #ffffffa6,
+    inset 0 0 0 2px #ffffff21,
+    inset 0 -3px 3px #0c3eae35,
+    0 1px 2px #12398626,
+    0 3px 5px #1649a91a;
+  text-shadow: 0 1px 1px #143fa838;
+}
+html .button.secondary,
+html.dark .button.secondary {
+  background: linear-gradient(#fff, #f0f4fa);
+  border: 1px solid #cbd5e4;
+  color: #25344b;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    inset 0 0 0 2px #ffffff70,
+    inset 0 -2px 2px #71839e0d,
+    0 2px 3px #233e6010;
+}
+html.dark .button.secondary {
+  background: linear-gradient(#2b3545, #1d2736);
+  color: #e3edfc;
+  border-color: #465670;
+  box-shadow:
+    inset 0 1px 0 #ffffff20,
+    inset 0 0 0 2px #ffffff04,
+    0 2px 4px #0003;
+}
+html .hero-buttons .button {
+  font-size: 14px;
+  padding-inline: 18px;
+}
+html .nav-cta {
+  min-height: 42px;
+  border-radius: 10px;
+  font-size: 13px;
+  padding: 9px 15px;
+  gap: 10px;
+}
+html .nav-actions {
+  gap: 16px;
+}
+html .nav-links {
+  gap: 22px;
+}
+html .nav-links a {
+  font-size: 14px;
+}
+html .button > svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+html .button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow:
+    inset 0 2px 4px #153c8833,
+    0 1px 1px #0000000a;
+}
+html .feature-demo-button,
+html .walkthrough-controls,
+html .course-filters button.selected {
+  border-radius: 9px;
+  box-shadow:
+    inset 0 1px 0 #ffffff75,
+    0 1px 2px #1b3e7310;
+}
+html .feature-demo-button {
+  background: linear-gradient(#fff, #edf3ff);
+  border-color: #b9cef2;
+  color: #285eaf;
+}
+html.dark .feature-demo-button {
+  background: linear-gradient(#2b3b55, #202e45);
+  border-color: #465e82;
+  color: #b9d3ff;
+  box-shadow:
+    inset 0 1px 0 #ffffff20,
+    0 2px 3px #0002;
+}
+html .feature-code .feature-demo-button {
+  background: linear-gradient(#3e5271, #2b3d59);
+  border-color: #526e98;
+  color: #d4e3ff;
+  box-shadow:
+    inset 0 1px 0 #ffffff17,
+    0 2px 3px #0002;
+}
+html .caring-support .caring-replay {
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+  border-radius: 0;
+}
+html .course-card-footer button,
+html .course-card-footer > a,
+html .mentor-course-link {
+  border: 1px solid #c5d5ee;
+  background: linear-gradient(#fff, #eff4fc);
+  border-radius: 8px;
+  padding: 7px 10px;
+  min-height: 34px;
+  color: #285caf;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 1px 2px #1b3e730d;
+  transition:
+    transform 140ms var(--ease-out),
+    border-color 140ms ease;
+}
+html.dark .course-card-footer button,
+html.dark .course-card-footer > a,
+html.dark .mentor-course-link {
+  background: linear-gradient(#28364c, #1d2a3e);
+  border-color: #3f5678;
+  color: #aacbff;
+  box-shadow:
+    inset 0 1px 0 #ffffff13,
+    0 1px 2px #0003;
+}
+html .mentor-course-link {
+  width: max-content;
+}
+html .course-card-footer button:active,
+html .course-card-footer > a:active,
+html .feature-demo-button:active {
+  transform: translateY(1px) scale(0.98);
+}
+html .course-card h3 {
+  font-size: 25px;
+  line-height: 1.2;
+  min-height: 60px;
+}
+html .catalog-grid .course-card-body > p {
+  font-family: var(--font-reading);
+  font-size: 16px;
+  line-height: 1.7;
+  min-height: 81px;
+}
+html .catalog-grid .course-card-footer {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+html .catalog-grid .course-card-footer > span {
+  font-size: 12px;
+}
+html .catalog-grid .course-card-footer :is(button, a) {
+  font-size: 12px;
+}
+html .approach-card h3 {
+  font-size: 25px;
+}
+html .approach-card p,
+html .mentor-info > p:not(.eyebrow) {
+  font-size: 17px;
+  line-height: 1.75;
+}
+html .mentor-info h3 {
+  font-size: 32px;
+}
+html .mentor-info {
+  padding: 30px 24px;
+}
+html .mentor-card {
+  grid-template-columns: 180px 1fr;
+}
+html .membership-card > p,
+html .membership-features > span,
+html .faq-list details > p {
+  font-size: 17px;
+  line-height: 1.75;
+}
+html .faq-list summary {
+  font-size: 18px;
+}
+html .footer-main > div > a:not(.brand),
+html .footer-main > div:first-child > p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+html .footer-main > div:first-child > p {
+  max-width: 270px;
+}
+html .price {
+  font-family: var(--font-heading);
+}
+html .final-cta h2 {
+  font-size: clamp(42px, 4.8vw, 64px);
+}
+html .final-cta p:not(.eyebrow) {
+  font-size: 20px;
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr 1.1fr;
+  gap: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  margin-top: 28px;
+  max-width: 470px;
+}
+.hero-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hero-stats b {
+  font-family: var(--font-heading);
+  font-size: 29px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+.hero-stats span {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted-ink);
+}
+/* One continuous, restrained atmosphere, including the space outside the content frame. */
+#root {
+  position: relative;
+  isolation: isolate;
+}
+html .hero-ambient {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: -1;
+  background: linear-gradient(
+    125deg,
+    #f0f6ff 0%,
+    #fcfdff 45%,
+    #f8fbff 70%,
+    #eef5ff 100%
+  );
+  overflow: hidden;
+}
+html.dark .hero-ambient {
+  background: linear-gradient(
+    125deg,
+    #101b2d 0%,
+    #11151e 45%,
+    #101720 70%,
+    #0f1c30 100%
+  );
+}
+html .hero-code-field {
+  inset: -30px -20px;
+  width: calc(100% + 40px);
+  height: calc(100% + 60px);
+  opacity: 0.06;
+  mask-image: linear-gradient(
+    90deg,
+    #000 0%,
+    #0008 15%,
+    transparent 35%,
+    transparent 68%,
+    #0009 90%,
+    #000 100%
+  );
+}
+html.dark .hero-code-field {
+  opacity: 0.075;
+}
+html .hero-light-blue {
+  left: -15%;
+  width: 65%;
+  background: radial-gradient(ellipse, #7aa9ff, transparent 66%);
+  opacity: 0.16;
+}
+html .hero-light-cyan {
+  right: -25%;
+  background: radial-gradient(ellipse, #64c6eb, transparent 67%);
+  opacity: 0.12;
+}
+html.dark .hero-light-blue {
+  opacity: 0.11;
+}
+html.dark .hero-light-cyan {
+  opacity: 0.06;
+}
+html .page-frame {
+  background: transparent;
+}
+html .approach {
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+}
+html .free-course-library {
+  background: color-mix(in srgb, var(--paper) 88%, #f2d5aa11);
+}
+html .final-cta {
+  background: color-mix(in srgb, var(--brand-soft) 89%, transparent);
+}
+html .site-footer {
+  background: color-mix(in srgb, var(--paper) 80%, transparent);
+}
+html .proof-strip {
+  background: color-mix(in srgb, var(--paper) 85%, transparent);
+}
+html .theme-toggle {
+  box-shadow:
+    inset 0 1px 0 #ffffff60,
+    0 1px 2px #16326310;
+}
+html.dark .theme-toggle {
+  box-shadow:
+    inset 0 1px 0 #ffffff14,
+    0 1px 2px #0003;
+}
+html button:focus-visible,
+html a:focus-visible,
+html summary:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 4px;
+}
+@media (hover: hover) {
+  html .button.primary:hover,
+  html.dark .button.primary:hover {
+    background: linear-gradient(#6a99ff, #3978f6 55%, #2260e5);
+    border-color: #164bc6;
+    box-shadow:
+      inset 0 1px 0 #ffffffb0,
+      inset 0 0 0 2px #ffffff28,
+      inset 0 -3px 3px #0c3eae30,
+      0 3px 7px #1649a928;
+  }
+  html .button.secondary:hover {
+    background: linear-gradient(#fff, #e9f0fb);
+    border-color: #a4bce3;
+  }
+  html.dark .button.secondary:hover {
+    background: linear-gradient(#33435c, #26364e);
+    border-color: #6e89b2;
+  }
+  html .course-card-footer :is(button, a):hover,
+  html .mentor-course-link:hover {
+    border-color: #7cacee;
+  }
+  html .feature-demo-button:hover {
+    filter: brightness(1.04);
+  }
+}
+@media (min-width: 1500px) {
+  html .hero h1 {
+    font-size: 92px;
+  }
+  html .hero-copy {
+    padding-block: 86px 76px;
+  }
+}
+@media (max-width: 1200px) {
+  html .hero-copy {
+    gap: 35px;
+    padding: 65px 35px;
+  }
+  html .hero h1 {
+    font-size: 76px;
+  }
+  html .hero-description > p:first-child {
+    font-size: 22px;
+  }
+  html .nav-links {
+    gap: 16px;
+  }
+  html .nav-links a {
+    font-size: 12px;
+  }
+  html .nav-actions {
+    gap: 13px;
+  }
+  html .mentor-card {
+    grid-template-columns: 155px 1fr;
+  }
+  html .mentor-info {
+    padding: 26px 20px;
+  }
+  html .mentor-info > p:not(.eyebrow) {
+    font-size: 16px;
+  }
+  html .catalog-grid .course-card h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1000px) {
+  html .hero-copy {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  html .hero h1 {
+    font-size: 66px;
+  }
+  html .hero-description > p:first-child {
+    font-size: 20px;
+  }
+  html .hero-support {
+    font-size: 15px;
+  }
+  html .section-description {
+    font-size: 17px;
+  }
+  html .nav-links a {
+    font-size: 12px;
+  }
+  html .nav-cta {
+    font-size: 12px;
+  }
+  html .hero-stats b {
+    font-size: 25px;
+  }
+  .hero-stats {
+    gap: 12px;
+  }
+  html .mentor-card {
+    grid-template-columns: 145px 1fr;
+  }
+}
+@media (max-width: 760px) {
+  html .hero-copy {
+    grid-template-columns: 1fr;
+    padding: 52px 28px;
+    gap: 35px;
+  }
+  html .hero h1 {
+    font-size: clamp(59px, 11vw, 82px);
+  }
+  html .hero-description > p:first-child {
+    font-size: 22px;
+    max-width: 600px;
+  }
+  html .hero-support {
+    font-size: 16px;
+    max-width: 550px;
+  }
+  html .hero-stats {
+    max-width: 500px;
+  }
+  html .section-description {
+    max-width: 600px;
+  }
+  html .mentor-card {
+    grid-template-columns: 170px 1fr;
+  }
+  html .catalog-grid .course-card h3 {
+    font-size: 25px;
+  }
+  html .catalog-grid .course-card-body > p {
+    min-height: 0;
+  }
+  html .hero-buttons .button {
+    font-size: 15px;
+  }
+  html .hero-note {
+    font-size: 13px;
+  }
+  html .hero-stats span {
+    font-size: 13px;
+  }
+  html .final-cta p:not(.eyebrow) {
+    font-size: 18px;
+  }
+  html .nav-actions {
+    gap: 10px;
+  }
+  html .nav-cta {
+    font-size: 11px;
+    padding: 8px 12px;
+    min-height: 39px;
+  }
+}
+@media (max-width: 560px) {
+  html .nav-inner {
+    padding-inline: 20px;
+    gap: 10px;
+  }
+  html .nav-inner > .brand img {
+    width: 125px;
+  }
+  html .nav-actions {
+    gap: 8px;
+  }
+  html .nav-cta {
+    font-size: 10px;
+    gap: 7px;
+    padding: 8px 10px;
+    min-height: 36px;
+    border-radius: 9px;
+  }
+  html .hero-copy {
+    padding: 44px 26px 40px;
+    gap: 30px;
+  }
+  html .hero h1 {
+    font-size: 64px;
+  }
+  html h2 {
+    font-size: 40px;
+  }
+  html .section-description {
+    font-size: 17px;
+  }
+  html .hero-buttons .button {
+    font-size: 13px;
+    padding: 12px 14px;
+    gap: 8px;
+    min-height: 49px;
+  }
+  html .hero-description > p:first-child {
+    font-size: 21px;
+  }
+  html .hero-support {
+    font-size: 16px;
+  }
+  html .hero-stats b {
+    font-size: 27px;
+  }
+  html .hero-stats {
+    gap: 12px;
+  }
+  html .hero-stats span {
+    font-size: 11px;
+  }
+  html .approach-card h3 {
+    font-size: 25px;
+  }
+  html .mentor-card {
+    grid-template-columns: 130px 1fr;
+  }
+  html .mentor-info {
+    padding: 23px 18px;
+  }
+  html .mentor-info h3 {
+    font-size: 28px;
+  }
+  html .mentor-info > p:not(.eyebrow) {
+    font-size: 15px;
+  }
+  html .membership-card > p,
+  html .membership-features > span,
+  html .faq-list details > p {
+    font-size: 16px;
+  }
+  html .faq-list summary {
+    font-size: 17px;
+  }
+  html .final-cta h2 {
+    font-size: 42px;
+  }
+  html .footer-main > div:first-child > p {
+    max-width: 330px;
+  }
+  html .course-card-footer > span {
+    font-size: 13px;
+  }
+  html .hero-code-field {
+    opacity: 0.05;
+  }
+  html.dark .hero-code-field {
+    opacity: 0.065;
+  }
+}
+@media (max-width: 380px) {
+  html .nav-inner {
+    padding-inline: 16px;
+  }
+  html .nav-inner > .brand img {
+    width: 117px;
+  }
+  html .nav-actions {
+    gap: 6px;
+  }
+  html .hero h1 {
+    font-size: 59px;
+  }
+  html .hero-buttons .button {
+    font-size: 12px;
+    padding-inline: 12px;
+  }
+  html .hero-copy {
+    padding-inline: 22px;
+  }
+  html .mentor-card {
+    grid-template-columns: 1fr;
+  }
+  html .mentor-photo {
+    height: 280px;
+  }
+  html .mentor-photo > img {
+    object-position: 50% 35%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html .button,
+  html .feature-demo-button,
+  html .course-card-footer :is(button, a) {
+    transition: none;
+  }
+  html .hero-code-field,
+  html .hero-light {
+    animation: none;
+  }
+}
+html :is(.button, .feature-demo-button):focus-visible {
+  transition: none;
+}
+.membership-duration {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: -10px 0 25px;
+  font-family: var(--font-ui);
+}
+.membership-duration > span {
+  font-size: 14px;
+  color: var(--muted-ink);
+}
+.membership-duration > div {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+}
+.membership-duration button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 9px 16px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted-ink);
+  border: 1px solid transparent;
+}
+.membership-duration button[aria-pressed="true"] {
+  background: linear-gradient(#fff, #edf3ff);
+  border-color: #c3d3ed;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 2px 3px #1234560e;
+  color: #245cb9;
+}
+.membership-duration button > span {
+  font-size: 10px;
+  background: #e0ebff;
+  border: 1px solid #c9dcff;
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: #3266bb;
+}
+.dark .membership-duration button[aria-pressed="true"] {
+  background: linear-gradient(#2d405d, #23334c);
+  border-color: #4a6388;
+  box-shadow:
+    inset 0 1px 0 #ffffff20,
+    0 2px 3px #0002;
+  color: #c2d9ff;
+}
+.dark .membership-duration button > span {
+  color: #adcaff;
+  background: #243c62;
+  border-color: #3b5780;
+}
+@media (max-width: 760px) {
+  html .announcement {
+    height: 35px;
+    justify-content: space-between;
+    padding-inline: 26px;
+    gap: 15px;
+  }
+  html .announcement > span:nth-child(2) {
+    display: none;
+  }
+  html .announcement-tag {
+    font-size: 9px;
+    white-space: nowrap;
+    padding: 3px 7px;
+  }
+  html .announcement a {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  html .hero-socials > span {
+    font-size: 11px;
+  }
+}
+@media (max-width: 560px) {
+  html .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  html .hero-buttons .button {
+    width: 100%;
+    font-size: 15px;
+    min-height: 51px;
+  }
+  .membership-duration {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .membership-duration > div {
+    justify-content: space-between;
+  }
+  .membership-duration button {
+    flex: 1;
+    padding: 8px 10px;
+    gap: 6px;
+    font-size: 13px;
+  }
+  .membership-duration button > span {
+    font-size: 9px;
+  }
+}
+html .hero-light {
+  filter: blur(18px);
+}
+html .swatch-cobalt {
+  background: #2563eb;
+}
+html .swatch-teal {
+  background: #0a8a84;
+}
+html .project-output.theme-teal {
+  --project-color: #087e78;
+  --project-bg: #edf8f6;
+}
+html.dark .project-output.theme-teal {
+  --project-color: #8bd4c9;
+  --project-bg: #1c302f;
+}

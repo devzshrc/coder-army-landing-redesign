@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./assets/favicon-original.png" />
+    <title>Coder Army — Learn Coding with Rohit Negi & Aditya Tandon</title>
+    <meta
+      name="description"
+      content="Join Coder Army’s community of 202K+ students. Explore live courses and free lessons in DSA, development, system design, DevOps, and AI with Rohit Negi and Aditya Tandon."
+    />
+    <meta name="theme-color" content="#fcfcfa" />
+    <script>
+      (() => {
+        let preference = null;
+        try {
+          preference = localStorage.getItem("coder-army-theme");
+        } catch {}
+        const dark =
+          preference === "dark" ||
+          (preference !== "light" &&
+            matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark", dark);
+        document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        document.querySelector('meta[name="theme-color"]').content = dark
+          ? "#000000"
+          : "#ffffff";
+      })();
+    </script>
+    <script type="module" src="./frontend.tsx" async></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

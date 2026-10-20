@@ -1,0 +1,2 @@
+import page from './src/index.html';
+Bun.serve({port:3018,routes:{'/':page,'/mobile':()=>new Response('<html><body style="margin:0;background:#222"><iframe title="Mobile landing review" src="/" style="width:390px;height:844px;border:0"></iframe></body></html>',{headers:{'Content-Type':'text/html'}}),'/tablet':()=>new Response('<html><body style="margin:0;background:#222"><iframe title="Tablet landing review" src="/" style="width:808px;height:904px;border:0"></iframe></body></html>',{headers:{'Content-Type':'text/html'}})}});

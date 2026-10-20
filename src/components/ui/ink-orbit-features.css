@@ -1,0 +1,292 @@
+/* 06 · Two small concept cards: a working model above, the idea below. */
+#root .technical-depth h2 > span {
+  color: var(--muted-ink);
+}
+#root .concept-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+#root .concept-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--paper);
+  overflow: hidden;
+}
+
+/* ---------- Stage ---------- */
+#root .concept-stage {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space-6);
+  min-height: 300px;
+  padding: var(--space-8) var(--space-8) var(--space-6);
+  background: color-mix(in srgb, var(--soft) 50%, var(--paper));
+  border-bottom: 1px solid var(--border);
+}
+#root .concept-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  font-size: 13px;
+  color: var(--muted-ink);
+}
+#root .concept-control button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted-ink);
+  cursor: pointer;
+  transition:
+    color 150ms var(--ease),
+    border-color 150ms var(--ease),
+    transform 100ms var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+#root .concept-control button:hover,
+#root .concept-control button[aria-pressed="true"] {
+  border-color: color-mix(in srgb, var(--ink) 30%, transparent);
+  color: var(--ink);
+}
+}
+
+/* ---------- Copy ---------- */
+#root .concept-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-8);
+}
+#root .concept-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--brand);
+}
+#root .concept-copy h3 {
+  margin: 0;
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+#root .concept-copy p {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted-ink);
+}
+#root .concept-copy a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+#root .concept-copy a svg {
+  transition: transform 200ms var(--ease);
+}
+@media (hover: hover) and (pointer: fine) {
+#root .concept-copy a:hover svg {
+  transform: translate(2px, -2px);
+}
+}
+
+/* ---------- Hash ring ---------- */
+#root .hash-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 132px;
+  align-items: center;
+  gap: var(--space-8);
+}
+#root .hash-ring {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  justify-self: center;
+  overflow: visible;
+}
+#root .hash-ring-line {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 1;
+}
+#root .hash-key {
+  fill: var(--muted-ink);
+  transition: fill 300ms var(--ease);
+}
+#root .hash-key.moved {
+  fill: var(--brand);
+}
+#root .hash-server rect {
+  fill: var(--paper);
+  stroke: var(--border);
+}
+#root .hash-server text {
+  fill: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+}
+#root .hash-server.is-new rect {
+  stroke: var(--brand);
+  fill: color-mix(in srgb, var(--brand) 12%, var(--paper));
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: concept-pop 400ms var(--ease) both;
+}
+#root .hash-server.is-new text {
+  fill: var(--brand);
+}
+#root .ring-center {
+  fill: var(--muted-ink);
+  font-size: 11px;
+}
+#root .hash-routes {
+  margin: 0;
+}
+#root .hash-routes > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  transition: color 300ms var(--ease);
+}
+#root .hash-routes > div:first-child {
+  border-top: 1px solid var(--border);
+}
+#root .hash-routes dt {
+  color: var(--muted-ink);
+}
+#root .hash-routes dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--ink);
+}
+#root .hash-routes [data-moved="true"] :is(dt, dd) {
+  color: var(--brand);
+}
+
+/* ---------- Bloom filter ---------- */
+#root .bloom-bits {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 4px;
+}
+#root .bloom-bits > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+#root .bloom-bits b {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--paper);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted-ink);
+  transition:
+    border-color 250ms var(--ease),
+    background-color 250ms var(--ease),
+    color 250ms var(--ease);
+}
+#root .bloom-bits [data-set="true"] b {
+  color: var(--ink);
+}
+#root .bloom-bits [data-checked="true"] b {
+  border-color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 12%, var(--paper));
+  color: var(--brand);
+}
+#root .bloom-bits span {
+  font-size: 10px;
+  color: var(--muted-ink);
+  opacity: 0.6;
+}
+#root .bloom-bits [data-checked="true"] span {
+  color: var(--brand);
+  opacity: 1;
+}
+#root .bloom-result {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted-ink);
+}
+#root .bloom-result > span {
+  flex: none;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  background: color-mix(in srgb, #22c55e 14%, transparent);
+  color: #16a34a;
+}
+html.dark #root .bloom-result > span {
+  color: #4ade80;
+}
+#root .bloom-result > span[data-maybe="true"] {
+  background: color-mix(in srgb, #f59e0b 16%, transparent);
+  color: #d97706;
+}
+html.dark #root .bloom-result > span[data-maybe="true"] {
+  color: #fbbf24;
+}
+#root .bloom-keys {
+  display: flex;
+  gap: 6px;
+}
+
+@keyframes concept-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 900px) {
+  #root .concept-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 520px) {
+  #root .hash-layout {
+    grid-template-columns: 1fr;
+  }
+  #root .concept-stage,
+  #root .concept-copy {
+    padding: var(--space-6);
+  }
+  #root .concept-control {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* Center the model in the stage; the control row sits on the bottom edge. */
+#root .concept-stage > :first-child,
+#root .concept-control {
+  margin-top: auto;
+}
