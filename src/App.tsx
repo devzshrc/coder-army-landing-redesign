@@ -200,12 +200,13 @@ export function App() {
             </div>
           </div>
         </section>
+        <Pricing />
         <LogoCloud />
         <section className="courses-section section-pad" id="courses">
           <div className="section-top reveal">
             <div>
               <p className="eyebrow">
-                <span>01</span> OUR PREMIUM COURSES
+                <span>02</span> OUR PREMIUM COURSES
               </p>
               <h2>
                 Pick a course. Learn one skill properly.
@@ -275,7 +276,7 @@ export function App() {
           <div className="section-top reveal">
             <div>
               <p className="eyebrow">
-                <span>02</span> EXPERT GUIDANCE
+                <span>03</span> EXPERT GUIDANCE
               </p>
               <h2>
                 We teach it the way it sticks.
@@ -292,7 +293,7 @@ export function App() {
           <div className="section-top reveal">
             <div>
               <p className="eyebrow">
-                <span>04</span> MEET YOUR INSTRUCTORS
+                <span>05</span> MEET YOUR INSTRUCTORS
               </p>
               <h2>
                 Learn with Rohit Negi
@@ -309,7 +310,6 @@ export function App() {
           />
         </section>
         <ClientFeedback />
-        <Pricing />
         <FreeCourseLibrary />
         <MemberVideos />
         <section className="faq section-pad" id="faq">

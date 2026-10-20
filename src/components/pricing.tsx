@@ -40,7 +40,7 @@ export function Pricing() {
     <section className="membership section-pad" id="membership">
       <div className="pricing-head reveal">
         <p className="eyebrow">
-          <span>06</span> OUR MEMBERSHIP
+          <span>01</span> OUR MEMBERSHIP
         </p>
         <h2>Pay once. Keep learning with Strike.</h2>
         <p className="section-description">

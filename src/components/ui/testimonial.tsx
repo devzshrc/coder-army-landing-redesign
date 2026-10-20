@@ -85,7 +85,7 @@ export default function ClientFeedback() {
       <div className="section-top reveal">
         <div>
           <p className="eyebrow">
-            <span>05</span> FROM THE COMMUNITY
+            <span>06</span> FROM THE COMMUNITY
           </p>
           <h2>Students, in their own words.</h2>
         </div>
