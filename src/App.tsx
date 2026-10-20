@@ -111,14 +111,14 @@ export function App() {
             className={mobileOpen ? "nav-links mobile-open" : "nav-links"}
             aria-label="Main navigation"
           >
+            <a href="#courses" onClick={() => setMobileOpen(false)}>
+              Courses
+            </a>
             <a href="#approach" onClick={() => setMobileOpen(false)}>
               Our approach
             </a>
             <a href="#mentors" onClick={() => setMobileOpen(false)}>
               Meet your mentors
-            </a>
-            <a href="#courses" onClick={() => setMobileOpen(false)}>
-              Courses
             </a>
             <a href="#testimonials" onClick={() => setMobileOpen(false)}>
               Student stories
@@ -201,48 +201,11 @@ export function App() {
           </div>
         </section>
         <LogoCloud />
-        <section className="approach section-pad" id="approach">
-          <div className="section-top reveal">
-            <div>
-              <p className="eyebrow">
-                <span>01</span> EXPERT GUIDANCE
-              </p>
-              <h2>
-                We teach it the way it sticks.
-              </h2>
-            </div>
-            <p className="section-description">
-              First you understand the idea. Then you build it. When you get stuck, someone helps. And when you’re ready, we help you get the job.
-            </p>
-          </div>
-          <LearningFeatures />
-        </section>
-        <InkOrbitFeatures />
-        <section className="mentors section-pad" id="mentors">
-          <div className="section-top reveal">
-            <div>
-              <p className="eyebrow">
-                <span>03</span> MEET YOUR INSTRUCTORS
-              </p>
-              <h2>
-                Learn with Rohit Negi
-                {" "}
-                and Aditya Tandon.
-              </h2>
-            </div>
-            <p className="section-description">
-              Two engineers who studied at IIT Guwahati and worked at Uber, Ola, and Oxyzo. Now they teach what they learned.
-            </p>
-          </div>
-          <Instructors
-            onSelect={(id) => setSelected(courses.find((c) => c.id === id) ?? null)}
-          />
-        </section>
         <section className="courses-section section-pad" id="courses">
           <div className="section-top reveal">
             <div>
               <p className="eyebrow">
-                <span>04</span> OUR PREMIUM COURSES
+                <span>01</span> OUR PREMIUM COURSES
               </p>
               <h2>
                 Pick a course. Learn one skill properly.
@@ -307,6 +270,43 @@ export function App() {
               Or try a free course <ArrowRight size={14} />
             </a>
           </div>
+        </section>
+        <section className="approach section-pad" id="approach">
+          <div className="section-top reveal">
+            <div>
+              <p className="eyebrow">
+                <span>02</span> EXPERT GUIDANCE
+              </p>
+              <h2>
+                We teach it the way it sticks.
+              </h2>
+            </div>
+            <p className="section-description">
+              First you understand the idea. Then you build it. When you get stuck, someone helps. And when you’re ready, we help you get the job.
+            </p>
+          </div>
+          <LearningFeatures />
+        </section>
+        <InkOrbitFeatures />
+        <section className="mentors section-pad" id="mentors">
+          <div className="section-top reveal">
+            <div>
+              <p className="eyebrow">
+                <span>04</span> MEET YOUR INSTRUCTORS
+              </p>
+              <h2>
+                Learn with Rohit Negi
+                {" "}
+                and Aditya Tandon.
+              </h2>
+            </div>
+            <p className="section-description">
+              Two engineers who studied at IIT Guwahati and worked at Uber, Ola, and Oxyzo. Now they teach what they learned.
+            </p>
+          </div>
+          <Instructors
+            onSelect={(id) => setSelected(courses.find((c) => c.id === id) ?? null)}
+          />
         </section>
         <ClientFeedback />
         <Pricing />

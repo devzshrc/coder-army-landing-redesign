@@ -160,7 +160,7 @@ export default function InkOrbitFeatures() {
       <div className="section-top reveal">
         <div>
           <p className="eyebrow">
-            <span>02</span> FROM FIRST PRINCIPLES TO SYSTEM DESIGN
+            <span>03</span> FROM FIRST PRINCIPLES TO SYSTEM DESIGN
           </p>
           <h2>
             Go beyond the answer. <span>Understand the system.</span>
